@@ -44,6 +44,9 @@ module Swagger
         end
 
         def generate_docs(apis=nil)
+          print ">>>>"
+          puts apis
+          print "<<<<"
           apis ||= Config.registered_apis
           results = {}
           set_real_methods
