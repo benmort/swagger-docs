@@ -67,6 +67,13 @@ module Swagger
 
           get_route_paths(settings[:controller_base_path]).each do |path|
             ret = process_path(path, root, config, settings)
+            puts ">>>"
+            puts path
+            puts root
+            puts config
+            puts settings
+            puts ret
+            puts "<<<"
             results[ret[:action]] << ret
             if ret[:action] == :processed
               resources << generate_resource(ret[:path], ret[:apis], ret[:models], settings, root, config)
